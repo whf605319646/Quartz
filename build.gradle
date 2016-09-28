@@ -9,6 +9,7 @@
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+apply plugin: 'eclipse'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -17,10 +18,26 @@ repositories {
     jcenter()
 }
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // The production code uses the SLF4J logging API at compile time
     compile 'org.slf4j:slf4j-api:1.7.21'
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+	compile group: 'org.springframework', name: 'spring-context', version: '4.3.3.RELEASE'
+	// https://mvnrepository.com/artifact/org.springframework/spring-test
+	compile group: 'org.springframework', name: 'spring-test', version: '4.3.3.RELEASE'
+	// https://mvnrepository.com/artifact/org.springframework/spring-web
+	compile group: 'org.springframework', name: 'spring-web', version: '4.3.3.RELEASE'
+	// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+	compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.3.RELEASE'
+	// https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+	compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.3.RELEASE'
+	
+    // https://mvnrepository.com/artifact/org.springframework/spring-context-support
+	compile group: 'org.springframework', name: 'spring-context-support', version: '4.3.3.RELEASE'
+    
     // https://mvnrepository.com/artifact/org.quartz-scheduler/quartz
 	compile group: 'org.quartz-scheduler', name: 'quartz', version: '2.2.3'
 	compile group: 'org.quartz-scheduler', name: 'quartz-jobs', version: '2.2.3'
